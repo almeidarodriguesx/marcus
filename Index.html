@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Marcus Campiteli - Cursos Completos para Concursos</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ------------------- */
+        /* CSS Globals & Reset */
+        /* ------------------- */
+        :root {
+            --primary-blue: #0d3b66;
+            --secondary-yellow: #f9a826;
+            --light-bg: #f7f9fc;
+            --white-color: #ffffff;
+            --dark-text: #333333;
+            --light-text: #6c757d;
+            --border-color: #e0e0e0;
+            --success-green: #28a745;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white-color);
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--light-text);
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-yellow);
+            color: var(--primary-blue);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-large {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+        }
+
+        /* ------------------- */
+        /* Header & Navigation */
+        /* ------------------- */
+        .header {
+            background-color: var(--white-color);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-yellow);
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ------------------- */
+        /* Hero Section        */
+        /* ------------------- */
+        #hero {
+            background-color: var(--primary-blue);
+            color: var(--white-color);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            color: var(--white-color);
+            font-size: 3rem;
+        }
+
+        #hero h1 span {
+            color: var(--secondary-yellow);
+        }
+        
+        #hero .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 20px auto 30px;
+            max-width: 700px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* ------------------- */
+        /* Differentiators     */
+        /* ------------------- */
+        #diferenciais {
+            background-color: var(--light-bg);
+        }
+        .diferenciais-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .diferencial-item .icon {
+            font-size: 3rem;
+            color: var(--secondary-yellow);
+            margin-bottom: 15px;
+        }
+        .diferencial-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .diferencial-item p {
+            color: var(--light-text);
+        }
+        
+        /* ------------------- */
+        /* About Professor     */
+        /* ------------------- */
+        #sobre-professor {
+            background-color: var(--white-color);
+        }
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .sobre-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .sobre-content h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .sobre-content p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+        }
+        .sobre-credentials {
+            list-style: none;
+            padding: 0;
+        }
+        .sobre-credentials li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .sobre-credentials .icon {
+            color: var(--secondary-yellow);
+        }
+
+
+        /* ------------------- */
+        /* Courses Section     */
+        /* ------------------- */
+        #cursos {
+            background-color: var(--light-bg);
+        }
+        
+        .cursos-category {
+            margin-bottom: 60px;
+        }
+        
+        .cursos-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .cursos-category h3 {
+            font-size: 1.8rem;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-yellow);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .category-title-wrapper {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .cursos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .curso-card {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .curso-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .curso-card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .curso-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .curso-card .banca {
+            color: var(--secondary-yellow);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+            min-height: 20px; /* Ensures alignment */
+        }
+
+        .curso-card p {
+            color: var(--light-text);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-size: 0.95rem;
+        }
+
+        .curso-card .btn {
+            width: 100%;
+            margin-top: auto;
+        }
+        
+        /* ------------------- */
+        /* Testimonials Section*/
+        /* ------------------- */
+        #depoimentos {
+            background-color: var(--white-color);
+        }
+        .depoimentos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .depoimento-card {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+        .depoimento-card .quote-icon {
+            font-size: 2rem;
+            color: var(--secondary-yellow);
+            opacity: 0.5;
+        }
+        .depoimento-card p {
+            font-style: italic;
+            color: var(--light-text);
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        .depoimento-autor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+        .depoimento-autor img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-yellow);
+        }
+        .depoimento-autor-info h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin: 0;
+        }
+        .depoimento-autor-info span {
+            color: var(--success-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        /* ------------------- */
+        /* Guarantees Section  */
+        /* ------------------- */
+        #garantias {
+            background-color: var(--light-bg);
+        }
+        .garantias-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .garantias-list {
+            list-style: none;
+        }
+        .garantia-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        .garantia-item .icon {
+            font-size: 1.5rem;
+            color: var(--success-green);
+            margin-top: 5px;
+        }
+        .garantia-item h4 {
+            margin-bottom: 5px;
+        }
+        .garantia-item p {
+            color: var(--light-text);
+        }
+        .garantia-image img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        /* ------------------- */
+        /* FAQ Section         */
+        /* ------------------- */
+        #faq {
+            background-color: var(--white-color);
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+        }
+        .faq-item summary {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 15px 0;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            transition: transform 0.3s ease;
+        }
+        .faq-item[open] summary::after {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            padding: 0 10px 20px;
+            color: var(--light-text);
+        }
+
+        /* ------------------- */
+        /* Footer Section      */
+        /* ------------------- */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white-color);
+            padding: 60px 0;
+            text-align: center;
+        }
+        footer h2 {
+            color: var(--white-color);
+        }
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+
+        /* -------------------------- */
+        /* Responsive Design          */
+        /* -------------------------- */
+        @media (max-width: 992px) {
+            h2 { font-size: 2.2rem; }
+            .garantias-grid { grid-template-columns: 1fr; }
+            .garantia-image { display: none; }
+            .sobre-grid { grid-template-columns: 1fr; text-align: center; }
+            .sobre-content h2 { text-align: center; }
+            .sobre-credentials { display: inline-block; text-align: left; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            .nav-menu.active { display: block; }
+            .nav-menu ul { flex-direction: column; align-items: center; padding: 10px 0; }
+            .nav-menu ul li { width: 100%; text-align: center; }
+            .nav-menu ul a { display: block; padding: 15px 0; }
+            .menu-toggle { display: block; }
+
+            #hero h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            h2 { font-size: 1.8rem; }
+            .section-subtitle { font-size: 1rem; }
+            #hero h1 { font-size: 2rem; }
+            #hero .subtitle { font-size: 1rem; }
+            .hero-stats { gap: 10px; flex-direction: column; }
+            .stat-item { padding: 10px 15px; }
+            .cursos-grid { grid-template-columns: 1fr; }
+            .diferenciais-grid { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ================== -->
+    <!--      HEADER        -->
+    <!-- ================== -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Prof. Marcus <span>Campiteli</span></a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#diferenciais">O Método</a></li>
+                    <li><a href="#sobre-professor">O Professor</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="#depoimentos">Aprovados</a></li>
+                    <li><a href="#faq">Dúvidas</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================== -->
+        <!--    HERO SECTION    -->
+        <!-- ================== -->
+        <section id="hero">
+            <div class="container">
+                <h1>O caminho mais <span>rápido</span> para sua aprovação em Engenharia Civil</h1>
+                <p class="subtitle">Chega de estudar o que não cai. Com um método validado por mais de 15 anos, você foca no essencial e acelera a conquista do seu cargo público.</p>
+                <a href="#cursos" class="btn btn-large">Quero Começar a Estudar Agora</a>
+                <div class="hero-stats">
+                    <div class="stat-item"><strong>+1.000</strong> Alunos Aprovados</div>
+                    <div class="stat-item"><strong>+15</strong> Anos de Experiência</div>
+                    <div class="stat-item"><strong>+10.000</strong> Alunos na Comunidade</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== -->
+        <!--  DIFFERENTIALS     -->
+        <!-- ================== -->
+        <section id="diferenciais">
+            <div class="container">
+                <h2>Um Método Pensado para Quem Não Tem Tempo a Perder</h2>
+                <p class="section-subtitle">Nossa preparação é diferente de tudo que você já viu. Entenda por que nosso método funciona.</p>
+                <div class="diferenciais-grid">
+                    <div class="diferencial-item">
+                        <div class="icon"><i class="fas fa-bullseye"></i></div>
+                        <h3>Foco Absoluto</h3>
+                        <p>Material 100% direcionado para concursos de Engenharia Civil, sem conteúdo genérico ou "encheção de linguiça".</p>
+                    </div>
+                    <div class="diferencial-item">
+                        <div class="icon"><i class="fas fa-stopwatch"></i></div>
+                        <h3>Economia de Tempo</h3>
+                        <p>Aprenda apenas o que as bancas realmente cobram. Otimize sua rotina de estudos, mesmo com pouco tempo disponível.</p>
+                    </div>
+                    <div class="diferencial-item">
+                        <div class="icon"><i class="fas fa-check-double"></i></div>
+                        <h3>Método Validado</h3>
+                        <p>Mais de 15 anos de experiência e milhares de alunos aprovados comprovam a eficácia do nosso direcionamento.</p>
+                    </div>
+                    <div class="diferencial-item">
+                        <div class="icon"><i class="fas fa-user-tie"></i></div>
+                        <h3>Visão de Aprovado</h3>
+                        <p>Aprenda com um professor que já foi aprovado nos concursos mais difíceis e sabe exatamente o que você precisa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== -->
+        <!-- ABOUT PROFESSOR    -->
+        <!-- ================== -->
+        <section id="sobre-professor">
+            <div class="container">
+                <div class="sobre-grid">
+                    <div class="sobre-image">
+                        <img src="https://placehold.co/500x550/0d3b66/FFFFFF?text=Prof.+Marcus" alt="Foto do Professor Marcus Campiteli">
+                    </div>
+                    <div class="sobre-content">
+                        <h2>Conheça o Professor que Vai Guiar Sua Aprovação</h2>
+                        <p><strong>Marcus Campiteli</strong> não é apenas um professor, ele é a prova viva de que o método funciona. Como Auditor Federal de Controle Externo do TCU, ele entende a máquina pública por dentro. Como engenheiro formado pelo IME e mestre pela UnB, ele possui a mais alta qualificação técnica.</p>
+                        <p>Aprovado nos concursos do TCU e de Perito da Polícia Federal, ele transformou sua jornada de sucesso em um método de ensino claro e direto, focado em levar você ao mesmo destino: a aprovação.</p>
+                        <ul class="sobre-credentials">
+                            <li><i class="fas fa-shield-alt icon"></i> Auditor Federal de Controle Externo - TCU</li>
+                            <li><i class="fas fa-user-secret icon"></i> Aprovado para Perito da Polícia Federal</li>
+                            <li><i class="fas fa-graduation-cap icon"></i> Engenheiro Civil pelo IME</li>
+                            <li><i class="fas fa-book-reader icon"></i> Mestre pela UnB</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== -->
+        <!--  COURSES SECTION   -->
+        <!-- ================== -->
+        <section id="cursos">
+            <div class="container">
+                <h2>Escolha seu Preparatório</h2>
+                <p class="section-subtitle">Cursos completos e atualizados para os concursos mais disputados do país. Encontre o foco ideal para sua aprovação.</p>
+
+                <div class="cursos-category">
+                    <div class="category-title-wrapper">
+                        <h3>Cursos Completos / Vitalícios</h3>
+                    </div>
+                    <div class="cursos-grid">
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Curso Vitalício de Discursivas em Eng. Civil</h4>
+                                <p>Acesso permanente a 52 provas discursivas resolvidas e comentadas. O material definitivo para você dominar a escrita técnica e garantir sua vaga.</p>
+                                <a href="https://go.hotmart.com/083939892L?dp=1" class="btn" target="_blank">Ver como funciona por dentro</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cursos-category">
+                    <div class="category-title-wrapper">
+                        <h3>Cursos Pré e Pós Edital (2025)</h3>
+                    </div>
+                    <div class="cursos-grid">
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Perito PF - Eng. Civil</h4>
+                                <span class="banca">Banca: Cebraspe</span>
+                                <p>Curso completo (teoria, vídeos e questões) para o cargo de Perito da Polícia Federal. Material atualizado pós-edital.</p>
+                                <a href="https://go.hotmart.com/Y72891667T?dp=1" class="btn" target="_blank">Quero ser Perito</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Goinfra 2025</h4>
+                                <span class="banca">63 vagas</span>
+                                <p>Saia na frente da concorrência com um estudo direcionado para o aguardado concurso da Goinfra.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/goinfra-2024-gestor-de-engenharia-80-vagas-pre-edital/C94530814A" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>TCE-PE - Eng. Civil</h4>
+                                <span class="banca">Banca: FGV</span>
+                                <p>Foco total na exigente banca FGV para o concurso do Tribunal de Contas de Pernambuco. Aulas e materiais específicos.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/eng-civil-p-tce-pe-pre-edital-12-x-r-32-89/S95880953M" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Perito IGP-RS - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Preparatório completo para Perito Criminal no Rio Grande do Sul, abordando todos os tópicos de engenharia.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/perito-igp-rs-eng-civil-pre-edital-12-x-r-34-98/I99531484H" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Petrobras - Eng. Civil</h4>
+                                <span class="banca">Banca: Cebraspe</span>
+                                <p>Preparatório pré-edital para um dos concursos mais desejados. Domine os conhecimentos específicos exigidos.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/petrobras-engenharia-civil-pre-edital-12-x-r-32-89/T92280786U" class="btn" target="_blank">Ver como funciona</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Perito PC-RJ 2025</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Esteja preparado para o concurso de Perito da Polícia Civil do Rio de Janeiro com nosso material focado.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/perito-eng-civil-pcrj-2025-pre-edital/C99194773N" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>ION Niterói - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Preparatório para a Empresa de Infraestrutura e Obras de Niterói. Conquiste sua vaga na sua cidade.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/eng-civil-ion-empresa-de-infraestrutura-e-obras-de-niteroi/B98963064L" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>TCE-RJ - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Curso preparatório focado no Tribunal de Contas do Estado do Rio de Janeiro. Estude com quem entende do assunto.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/tce-rj-eng-civil-pre-edital/F96160125N" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>TCE-RS - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Garanta sua preparação para o Tribunal de Contas do Rio Grande do Sul com nosso material direcionado.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/tce-rs-eng-civil-pre-edital/S98429099B" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>TCE-SP - Obras e Serviços</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Preparatório para o cargo de Obras e Serviços de Engenharia do Tribunal de Contas de São Paulo.</p>
+                                <a href="https://hotmart.com/pt-br/marketplace/produtos/tce-sp-obras-e-servicos-de-engenharia/H98692914J" class="btn" target="_blank">Ver como funciona</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>TCE-BA - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital 2025</span>
+                                <p>Antecipe sua preparação para o Tribunal de Contas da Bahia e saia na frente da concorrência.</p>
+                                <a href="#" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Pref. Campinas - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital 2025</span>
+                                <p>Curso focado no concurso da Prefeitura de Campinas para engenheiros civis. Estude com material específico.</p>
+                                <a href="#" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>Planejamento & Infra DF</h4>
+                                <span class="banca">Pré-Edital 2025</span>
+                                <p>Preparatório para a Secretaria de Planejamento e Infraestrutura do Distrito Federal.</p>
+                                <a href="#" class="btn" target="_blank">Ver como funciona</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>SEIRH-PB - Infraestrutura</h4>
+                                <span class="banca">Pré-Edital 2025</span>
+                                <p>Curso para o cargo de Infraestrutura da Secretaria de Estado da Infraestrutura e dos Recursos Hídricos da Paraíba.</p>
+                                <a href="#" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                         <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>CFRM/IME 2025-26</h4>
+                                <span class="banca">Engenharia Militar</span>
+                                <p>Preparação de alto nível para o Curso de Formação de Oficiais da Reserva do IME, um dos mais difíceis do país.</p>
+                                <a href="#" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>CGE-PI - Eng. Obras</h4>
+                                <span class="banca">Banca: FCC</span>
+                                <p>Preparatório para a Controladoria-Geral do Estado do Piauí, com foco total na banca FCC.</p>
+                                <a href="#" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>CAESB 2025 - Eng. Civil</h4>
+                                <span class="banca">Pós-Edital</span>
+                                <p>Curso intensivo de reta final para o concurso da CAESB. Revisão dos pontos-chave e estratégia de prova.</p>
+                                <a href="#" class="btn" target="_blank">Estudar para a reta final</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>ARISB-MG - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Preparatório para a Agência Reguladora Intermunicipal de Saneamento Básico de Minas Gerais.</p>
+                                <a href="#" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>SOP-CE - Edificações/Rodovias</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Curso focado nos cargos de Edificações e Rodovias da Superintendência de Obras Públicas do Ceará.</p>
+                                <a href="#" class="btn" target="_blank">Ver como funciona</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>MPE-ES - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital</span>
+                                <p>Preparatório para o Ministério Público do Estado do Espírito Santo. Estude com material direcionado.</p>
+                                <a href="#" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>DNOCS - Eng. Civil</h4>
+                                <span class="banca">Pré-Edital 2025</span>
+                                <p>Curso preparatório para o Departamento Nacional de Obras Contra as Secas. Garanta sua vaga.</p>
+                                <a href="#" class="btn" target="_blank">Garantir minha vaga</a>
+                            </div>
+                        </div>
+                        <div class="curso-card">
+                            <div class="curso-card-content">
+                                <h4>EAOEAR 2025 - Eng. Civil</h4>
+                                <span class="banca">Aeronáutica</span>
+                                <p>Preparatório completo para o Exame de Admissão ao Estágio de Adaptação de Oficiais Engenheiros da Aeronáutica.</p>
+                                <a href="#" class="btn" target="_blank">Começar a estudar agora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== -->
+        <!-- TESTIMONIALS SECTION -->
+        <!-- ================== -->
+        <section id="depoimentos">
+            <div class="container">
+                <h2>Eles Confiaram no Método e Foram Aprovados</h2>
+                <p class="section-subtitle">Veja o que dizem alguns dos nossos mais de 1.000 alunos que conquistaram o cargo dos sonhos.</p>
+                <div class="depoimentos-grid">
+                    <div class="depoimento-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>O método do professor Marcus foi um divisor de águas. O foco no que realmente cai na prova economizou meu tempo e me deu a confiança que eu precisava para ser aprovado. Foi o melhor investimento da minha carreira.</p>
+                        <div class="depoimento-autor">
+                            <img src="https://placehold.co/100x100/0d3b66/FFFFFF?text=JP" alt="Foto do Aluno João P.">
+                            <div class="depoimento-autor-info">
+                                <h4>João P.</h4>
+                                <span>Aprovado - Perito PF</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Depois de várias tentativas frustradas com cursos genéricos, encontrei o preparatório do Marcus. A didática é incrível e o suporte nas dúvidas foi essencial. Hoje sou servidora pública e devo muito a este método.</p>
+                        <div class="depoimento-autor">
+                            <img src="https://placehold.co/100x100/0d3b66/FFFFFF?text=MS" alt="Foto da Aluna Maria S.">
+                            <div class="depoimento-autor-info">
+                                <h4>Maria S.</h4>
+                                <span>Aprovada - Analista TCE</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="depoimento-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p>Recomendo de olhos fechados. O material é completo, as aulas são objetivas e a experiência do professor em bancas como Cebraspe e FGV faz toda a diferença. Valeu cada centavo do investimento.</p>
+                        <div class="depoimento-autor">
+                            <img src="https://placehold.co/100x100/0d3b66/FFFFFF?text=CL" alt="Foto do Aluno Carlos L.">
+                            <div class="depoimento-autor-info">
+                                <h4>Carlos L.</h4>
+                                <span>Aprovado - Petrobras</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ================== -->
+        <!-- GUARANTEES SECTION -->
+        <!-- ================== -->
+        <section id="garantias">
+            <div class="container">
+                 <h2>Seu Risco é Zero. Sua Aprovação é o Foco.</h2>
+                 <p class="section-subtitle">Assuma o controle da sua preparação com total segurança e todos os recursos que você precisa para passar.</p>
+                <div class="garantias-grid">
+                    <div class="garantias-content">
+                        <ul class="garantias-list">
+                            <li class="garantia-item">
+                                <i class="fas fa-shield-alt icon"></i>
+                                <div>
+                                    <h4>Garantia Incondicional de 7 Dias</h4>
+                                    <p>Acesse o curso, assista às aulas e, se não for o que você esperava, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+                                </div>
+                            </li>
+                             <li class="garantia-item">
+                                <i class="fas fa-box-open icon"></i>
+                                <div>
+                                    <h4>Bônus Exclusivos e Acesso Imediato</h4>
+                                    <p>Receba apostilas, listas de exercícios e outros materiais bônus assim que a compra for confirmada. Comece a estudar na hora!</p>
+                                </div>
+                            </li>
+                             <li class="garantia-item">
+                                <i class="fas fa-sync-alt icon"></i>
+                                <div>
+                                    <h4>Atualizações Pós-Edital Gratuitas</h4>
+                                    <p>Se o edital do seu concurso mudar, nós atualizamos o material do curso para você sem nenhum custo adicional. Seu estudo sempre em dia.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="garantia-image">
+                        <img src="https://placehold.co/500x450/e0e0e0/333333?text=Selo+de+Garantia" alt="Selo de Garantia de 7 dias">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================== -->
+        <!-- FAQ SECTION        -->
+        <!-- ================== -->
+        <section id="faq">
+            <div class="container">
+                <h2>Ainda tem Dúvidas?</h2>
+                <p class="section-subtitle">Respondemos às perguntas mais comuns para que você tome a melhor decisão para o seu futuro.</p>
+                <div class="faq-container">
+                    <details class="faq-item">
+                        <summary>Não tenho muito tempo para estudar. O curso serve para mim?</summary>
+                        <div class="faq-answer">
+                            <p>Com certeza. Nosso método foi pensado exatamente para quem tem uma rotina corrida. As aulas são curtas, objetivas e focadas no que realmente importa, permitindo que você estude com qualidade no tempo que tem disponível.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Já investi em outros cursos e não tive resultado. Qual a diferença?</summary>
+                        <div class="faq-answer">
+                            <p>A grande diferença é a especificidade. Não somos um curso genérico. Somos 100% focados em Engenharia Civil para concursos, com material direcionado para cada banca. Analisamos milhares de questões para ensinar exatamente como o conteúdo é cobrado, algo que cursos abrangentes não fazem.</p>
+                        </div>
+                    </details>
+                     <details class="faq-item">
+                        <summary>E se o conteúdo não for suficiente para passar?</summary>
+                        <div class="faq-answer">
+                            <p>Nossa metodologia cobre todo o conteúdo relevante que as bancas costumam cobrar, com base em mais de 15 anos de análise de editais e provas. Além disso, os mais de 1.000 aprovados são a maior prova de que o método é, sim, suficiente para garantir sua aprovação.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>O investimento é alto para mim no momento.</summary>
+                        <div class="faq-answer">
+                            <p>Pense nisso como um investimento no seu futuro. O retorno com o salário e a estabilidade de um cargo público é imensamente maior. Para facilitar, oferecemos parcelamento em até 12x e entregamos bônus que aumentam ainda mais o valor do curso.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- ================== -->
+    <!--      FOOTER        -->
+    <!-- ================== -->
+    <footer>
+        <div class="container">
+            <h2>Está a um passo de mudar sua carreira.</h2>
+            <p>Junte-se a milhares de engenheiros e acelere sua jornada rumo ao cargo público.</p>
+            <a href="#cursos" class="btn btn-large">Quero Garantir Minha Vaga</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prof. Marcus Campiteli. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const isExpanded = navMenu.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
+        });
+    </script>
+
+</body>
+</html>
